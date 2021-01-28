@@ -58,6 +58,21 @@ class loggig(db.Model):
 
 
 
+class cart(db.Model):
+    id = db.Column('id', db.Integer, primary_key=True)
+    product = db.Column(db.String(250))
+    countmoney = db.Column(db.String(250))
+    type = db.Column(db.String(250))
+    email = db.Column(db.String(250))
+
+class member(db.Model):
+    id = db.Column('id', db.Integer, primary_key=True)
+    name = db.Column(db.String(250))
+    old = db.Column(db.String(250))
+    type = db.Column(db.String(250))
+    email = db.Column(db.String(250))
+
+
 engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
 
 db.create_all()
